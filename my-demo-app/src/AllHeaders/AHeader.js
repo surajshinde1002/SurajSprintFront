@@ -40,7 +40,21 @@ export default function AHeader() {
             id="navbarSupportedContent"
            
           >
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0" >
+            <li className="nav-item" style={{paddingTop:"7px"}}>
+                  <span>
+                    <Link
+                      to="/TeacherHome"
+                      style={{
+                        color: "#FFF",
+                        textDecoration: "none",
+                        marginRight: "1rem",
+                      }}
+                    >
+                      Home
+                    </Link>
+                  </span>
+                </li>
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -119,6 +133,10 @@ export default function AHeader() {
                     </Link>
                   </span>
                 </li>
+
+
+                
+
 
                 <li className="nav-item">
                   <span>

@@ -37,16 +37,18 @@ export default function ResourceList() {
     });
   };
 
-  const returnBook = (pdf_Name) => {
+  const returnBook = (pdf_Name,std) => {
     
+    if(std !== standard){
+      console.log("Your are not authorized to delete in class :" +std);
+        toast.error("Your are not authorized to modify the data in class : "+std);
+      }else{
     const urlResource = `${UrlResources}/api/Pdf/productPdf/delete/${pdf_Name}`;
-    
-
-   console.log("pdf name is : " +pdf_Name);
+       console.log("pdf name is : " +pdf_Name);
 
     axios.delete(urlResource).then((response) => {
       const result = response.data;
-      if (result["statusCode"] == 1) {
+      if (result["statusCode"] === 1) {
         toast.success("Resources deleted successfully!!");
         searchResources();
         // searchIssuedBooksBySpring();
@@ -56,6 +58,7 @@ export default function ResourceList() {
     }).catch(error => {
       toast.error(error.response.data.error);
     });
+  }
   };
  
 
@@ -99,12 +102,12 @@ export default function ResourceList() {
                 <button
                   className="btn btn-danger mr-5 btn-sm"
                   id="rbtn"
-                  onClick={() => returnBook(Resource.pdfName)}
+                  onClick={() => returnBook(Resource.pdfName,Resource.standard )}
                 >
                   Delete
                 </button>
-                
               </td>
+             
             </tr>
           ))}
         </tbody>
