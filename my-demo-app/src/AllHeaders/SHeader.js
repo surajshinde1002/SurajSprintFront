@@ -48,7 +48,7 @@ export default function SHeader() {
               <li class="nav-item">
                 <span>
                   <Link
-                    to="/SHome"
+                    to="/UHome"
                     style={{
                       color: "#FFF",
                       textDecoration: "none",

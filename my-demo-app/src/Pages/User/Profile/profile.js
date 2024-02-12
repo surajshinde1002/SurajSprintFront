@@ -41,7 +41,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container ">
       <div className="profile">
       
           <table class="table-borderless">

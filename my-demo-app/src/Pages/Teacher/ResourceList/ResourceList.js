@@ -37,6 +37,26 @@ export default function ResourceList() {
     });
   };
 
+  const returnBook = (pdf_Name) => {
+    
+    const urlResource = `${UrlResources}/api/Pdf/productPdf/delete/${pdf_Name}`;
+    
+
+   console.log("pdf name is : " +pdf_Name);
+
+    axios.delete(urlResource).then((response) => {
+      const result = response.data;
+      if (result["statusCode"] == 1) {
+        toast.success("Resources deleted successfully!!");
+        searchResources();
+        // searchIssuedBooksBySpring();
+      } else {
+        toast.error(result["message"]);
+      }
+    }).catch(error => {
+      toast.error(error.response.data.error);
+    });
+  };
  
 
   
@@ -75,6 +95,13 @@ export default function ResourceList() {
                   }}
                 >
                   VIEW
+                </button>
+                <button
+                  className="btn btn-danger mr-5 btn-sm"
+                  id="rbtn"
+                  onClick={() => returnBook(Resource.pdfName)}
+                >
+                  Delete
                 </button>
                 
               </td>

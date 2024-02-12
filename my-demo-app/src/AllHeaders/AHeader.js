@@ -9,9 +9,11 @@ export default function AHeader() {
   const logoutAdmin = () => {
     // remove the logged users details from session storage
     sessionStorage.removeItem("id");
-    sessionStorage.removeItem("firstName");
-    sessionStorage.removeItem("lastName");
-    sessionStorage.removeItem("loginStatus");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("name");
+    sessionStorage.removeItem("role");
+    sessionStorage.removeItem("standard");
+    sessionStorage.removeItem("phone_number");
 
     // navigate to sign in component
     navigate("/");

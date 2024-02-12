@@ -6,6 +6,7 @@ import SHeader from '../../../AllHeaders/SHeader';
 const UserHome = () => {
   return(
     <Container>
+      <br/>
       <SHeader/>
       <Background>
                 <img src="/images/LM3.png" />
